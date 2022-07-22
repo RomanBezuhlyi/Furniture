@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector("[data-menu-button-open]"),n=document.querySelector("[data-menu-button-close]"),t=document.querySelector("[data-menu]");e.addEventListener("click",(function(){t.classList.add("is-open"),document.body.classList.add("menu-open")})),n.addEventListener("click",(function(){t.classList.remove("is-open"),document.body.classList.remove("menu-open")}))}();
+//# sourceMappingURL=index.d714c0b9.js.map
