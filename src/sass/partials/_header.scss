@@ -1,0 +1,268 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 50px;
+  border-bottom: 1px solid getColor('warning');
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  overflow: hidden;
+
+  @include respondTo(desktop) {
+    height: 60px;
+  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+// =====left-header=====
+
+.social__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include respondTo(desktop) {
+  }
+}
+
+.icon__text {
+  display: none;
+
+  @include respondTo(tablet) {
+    display: block;
+    margin-right: 13px;
+
+    font-family: $fontPrimary;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+  }
+}
+
+.icon__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon__item {
+  margin-right: 20px;
+
+  @include respondTo(desktop) {
+    margin-right: 30px;
+  }
+}
+
+.call__number {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+
+  @include respondTo(desktop) {
+    margin-left: 30px;
+  }
+}
+
+.call__text {
+  text-decoration: none;
+  color: getColor('warning');
+  display: flex;
+  align-items: center;
+}
+
+.num {
+  display: none;
+
+  @include respondTo(tablet) {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__arrow {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+// =====right-header=====
+
+.nav {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+
+  @include respondTo(-mobile) {
+    width: 250px;
+  }
+
+  @include respondTo(mobile-desktop) {
+    width: 40%;
+  }
+
+  @include respondTo(-desktop) {
+    position: fixed;
+    top: 0;
+    left: 100%;
+
+    height: 100vh;
+
+    padding: 10px 0;
+
+    background-color: getColor('accent');
+
+    box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
+
+    transition-property: transform, visibility, opacity;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+
+  @include respondTo(desktop) {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.nav-list {
+  @include respondTo(desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.nav-list__item {
+  @include respondTo(-desktop) {
+    display: flex;
+    align-items: center;
+    height: 42px;
+
+    padding-left: 24px;
+
+    &:nth-child(2n + 1) {
+      border-top: 1px solid getColor('warning');
+      border-bottom: 1px solid getColor('warning');
+    }
+  }
+  @include respondTo(desktop) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.nav-list__link {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.29;
+
+  color: #ffffff;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include cssTransition(color);
+
+  &:hover,
+  &:focus,
+  &--current {
+    color: getColor('warning');
+  }
+
+  @include respondTo(desktop) {
+    color: getColor('warning');
+
+    font-size: 18px;
+    line-height: 1.31;
+
+    &:hover,
+    :focus {
+      border-bottom: 3px solid getColor('accent');
+    }
+  }
+}
+
+.button-box {
+  display: flex;
+  @include respondTo(desktop) {
+    display: none;
+  }
+}
+
+.header__button {
+  border: none;
+  &--only-desktop {
+    margin-left: 15px;
+
+    @include respondTo(-tablet) {
+      display: none;
+    }
+  }
+
+  &--no-desktop {
+    @include respondTo(desktop) {
+      display: none;
+    }
+  }
+
+  &--close,
+  &--open {
+    padding: 0;
+
+    width: 44px;
+
+    background-color: transparent;
+  }
+
+  &--open {
+    stroke: getColor('accent');
+  }
+
+  &--close {
+    margin: auto 10px 10px 0;
+
+    stroke: getColor('warning');
+
+    @include cssTransition(stroke);
+
+    &:hover,
+    &:focus {
+      stroke: getColor('primary');
+    }
+  }
+
+  &--submit {
+    margin: 0 auto 20px;
+  }
+}
+
+.btn__cancel {
+  margin-left: 80%;
+}
+
+.header__icons {
+  fill: getColor('warning');
+
+  &:hover {
+    fill: getColor('accent');
+  }
+}
