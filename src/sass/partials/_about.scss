@@ -1,0 +1,154 @@
+.about {
+  padding: 10px;
+  @include respondTo(tablet) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include respondTo(desktop) {
+    height: 105px;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  @include respondTo(tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.price__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+  font-family: $fontPrimary;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 125%;
+  text-transform: uppercase;
+
+  @include respondTo(tablet) {
+    margin-bottom: 0;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 18px;
+  }
+}
+
+.price__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: getColor('warning');
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  @include respondTo(tablet) {
+    flex-direction: row;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  @include respondTo(desktop) {
+    &:not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+
+  &:hover,
+  :focus {
+    color: getColor('accent');
+  }
+}
+
+.price__name {
+  display: block;
+  margin-right: 2px;
+}
+
+.logo {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  @include respondTo(tablet) {
+    width: 20%;
+    margin-bottom: 0;
+  }
+
+  @include respondTo(desktop) {
+    width: 100%;
+    margin-left: 80px;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-family: $fontPrimary;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 125%;
+
+    text-transform: uppercase;
+    color: getColor('warning');
+
+    @include respondTo(desktop) {
+      font-size: 18px;
+    }
+
+    &:hover,
+    :focus {
+      color: getColor('accent');
+    }
+  }
+
+  &__icon {
+    margin-right: 3px;
+  }
+}
+
+.button__about {
+  width: 180px;
+  height: 30px;
+  cursor: pointer;
+
+  @include respondTo(tablet) {
+    width: 120px;
+    height: 25px;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+
+  @include respondTo(desktop) {
+    width: 278px;
+    height: 51px;
+    font-size: 18px;
+    margin-left: 30px;
+  }
+
+  &:hover,
+  :focus {
+    opacity: 0.5;
+  }
+}

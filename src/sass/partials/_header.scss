@@ -1,10 +1,6 @@
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 10;
-  height: 50px;
+  height: 35px;
   border-bottom: 1px solid getColor('warning');
   display: flex;
   flex-direction: row;
