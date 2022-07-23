@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.3.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

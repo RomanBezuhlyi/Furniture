@@ -167,6 +167,10 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  &:hover,
+  :focus {
+    opacity: 0.5;
+  }
 
   &--right {
     border: none;
@@ -174,5 +178,9 @@
     cursor: pointer;
     transform: rotate(180deg);
     margin-top: -8px;
+    &:hover,
+    :focus {
+      opacity: 0.5;
+    }
   }
 }

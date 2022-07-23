@@ -1,0 +1,51 @@
+.info {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 400px;
+  background-position: right top 50px;
+
+  @include respondTo(tablet) {
+    height: 500px;
+    background-position: right top 100px;
+  }
+  @include respondTo(desktop) {
+    background-image: url(../images/info/info.jpg);
+    height: 675px;
+    background-position: right top 100px;
+  }
+}
+
+.info__text {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: getColor('primary');
+  border-right: 15px solid getColor('accent');
+  border-radius: 0px 3px 3px 0px;
+
+  font-family: $fontPrimary;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 125%;
+
+  color: getColor('warning');
+
+  @include respondTo(tablet) {
+    padding: 20px;
+    font-size: 12px;
+  }
+  @include respondTo(desktop) {
+    padding: 50px;
+    font-size: 18px;
+    margin-top: 100px;
+    height: 475px;
+    width: 791px;
+  }
+
+  &__accent {
+    color: getColor('accent');
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
