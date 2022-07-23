@@ -1,0 +1,105 @@
+.category__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 85px;
+}
+
+.category__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  :hover,
+  :focus {
+    fill: getColor('accent');
+  }
+}
+
+.category__item:hover > .category__name {
+  border-bottom: 3px solid getColor('accent');
+}
+
+.category__name {
+  margin-top: 10px;
+  font-family: $fontPrimary;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  text-transform: uppercase;
+
+  color: getColor('warning');
+}
+// ========================================================
+
+.price__cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  transition: all 1s ease-in-out;
+}
+
+.cart:hover,
+:focus {
+  background-color: getColor('accent');
+  transform: translate(0, -15px);
+}
+
+.cart__item {
+  margin-bottom: 60px;
+  cursor: pointer;
+}
+
+.cart-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+
+  font-family: $fontPrimary;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+
+  text-transform: uppercase;
+
+  color: getColor('warning');
+
+  @include respondTo(tablet) {
+    font-size: 24px;
+  }
+}
+
+.cart-new {
+  position: absolute;
+  padding: 5px 15px;
+  background-color: getColor('warning');
+  color: getColor('primary');
+  top: 10;
+  left: 0;
+}
+
+.cart-sale {
+  position: absolute;
+  padding: 5px 15px;
+  background-color: #ff1b1b;
+  color: getColor('primary');
+  top: 48;
+  left: 0;
+}
+
+.new-price {
+  color: #ff1b1b;
+}
+
+.old-price {
+  color: #bcbdbb;
+}
