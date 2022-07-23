@@ -1,16 +1,8 @@
 .info {
-  background-image: none;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 400px;
-  background-position: right top 50px;
-
-  @include respondTo(tablet) {
-    height: 500px;
-    background-position: right top 100px;
-  }
   @include respondTo(desktop) {
     background-image: url(../images/info/info.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 675px;
     background-position: right top 100px;
   }

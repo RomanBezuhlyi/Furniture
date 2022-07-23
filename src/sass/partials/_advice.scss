@@ -1,0 +1,113 @@
+.advice {
+  @include respondTo(desktop) {
+    background-image: url(../images/form/form.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 675px;
+    background-position: left top 100px;
+  }
+
+  &__block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    padding: 25px 25px 25px 15px;
+
+    background-color: getColor('primary');
+    border-left: 15px solid getColor('accent');
+    border-radius: 0px 3px 3px 0px;
+
+    @include respondTo(desktop) {
+      margin-left: auto;
+      margin-right: 0;
+      width: 513px;
+      height: 457px;
+      padding: 50px 50px 50px 30px;
+      margin-top: 100px;
+    }
+
+    &__title {
+      font-family: $fontPrimary;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 125%;
+      margin-bottom: 15px;
+
+      color: getColor('warning');
+
+      @include respondTo(tablet) {
+        font-size: 28px;
+      }
+      @include respondTo(desktop) {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.form {
+  &__input {
+    width: 250px;
+    height: 35px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid getColor('warning');
+    border-radius: 3px;
+
+    @include respondTo(tablet) {
+      width: 300px;
+      height: 45px;
+    }
+    @include respondTo(desktop) {
+      width: 432px;
+      height: 51px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    width: 250px;
+    height: 35px;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    @include respondTo(tablet) {
+      width: 300px;
+      height: 45px;
+    }
+    @include respondTo(desktop) {
+      width: 432px;
+      height: 51px;
+      padding: 15px;
+      margin-bottom: 44px;
+    }
+
+    &:hover,
+    :focus {
+      opacity: 0.5;
+    }
+  }
+}
+
+.form__text {
+  font-family: $fontPrimary;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+
+  @include respondTo(tablet) {
+    font-size: 16px;
+  }
+  @include respondTo(desktop) {
+    font-size: 18px;
+  }
+
+  color: getColor('warning');
+  &__accent {
+    font-weight: 700;
+  }
+}
