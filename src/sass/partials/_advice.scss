@@ -1,10 +1,12 @@
 .advice {
+  margin-bottom: 70px;
   @include respondTo(desktop) {
     background-image: url(../images/form/form.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     height: 675px;
     background-position: left top 100px;
+    margin-bottom: 109px;
   }
 
   &__block {
