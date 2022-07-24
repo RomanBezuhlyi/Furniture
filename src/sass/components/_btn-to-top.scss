@@ -1,0 +1,26 @@
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 36px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: getColor('accent');
+  color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  box-shadow: 0px 4px 12px rgba(130, 130, 130, 0.2);
+}
+
+#myBtn:hover {
+  opacity: 0.5;
+}
+
+.btn-top {
+  margin-top: 4px;
+  fill: getColor('primary');
+}
