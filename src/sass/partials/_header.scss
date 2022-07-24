@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 
@@ -27,6 +28,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   @include respondTo(desktop) {
   }
 }
@@ -62,6 +64,8 @@
   margin-left: 20px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   @include respondTo(desktop) {
     margin-left: 30px;
@@ -73,21 +77,38 @@
   color: getColor('warning');
   display: flex;
   align-items: center;
-}
-
-.num {
-  display: none;
-
+  font-size: 12px;
   @include respondTo(tablet) {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: 700;
     font-size: 20px;
   }
+}
 
-  &__arrow {
-    margin-left: 10px;
-    margin-right: 10px;
+.header__icons__tell {
+  width: 15px;
+  height: 15px;
+  @include respondTo(tablet) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.header__icons__arr {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  @include respondTo(tablet) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.header__icons {
+  width: 15px;
+  height: 15px;
+
+  @include respondTo(tablet) {
+    width: 25px;
+    height: 25px;
   }
 }
 

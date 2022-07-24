@@ -69,6 +69,7 @@
   &:hover,
   :focus {
     color: getColor('accent');
+    fill: getColor('accent');
   }
 }
 
@@ -94,7 +95,7 @@
   }
 }
 
-.cart {
+.about__cart {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -120,6 +121,7 @@
     &:hover,
     :focus {
       color: getColor('accent');
+      fill: getColor('accent');
     }
   }
 

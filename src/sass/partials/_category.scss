@@ -1,3 +1,7 @@
+.category {
+  padding: 0 10px;
+}
+
 .category__list {
   display: flex;
   flex-wrap: wrap;
@@ -5,30 +9,35 @@
   margin-bottom: 85px;
 }
 
-.category__item {
+.category__item__link {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   :hover,
   :focus {
     fill: getColor('accent');
   }
 }
 
-.category__item:hover > .category__name {
-  border-bottom: 3px solid getColor('accent');
+.category__item__link:hover > .category__name {
+  color: getColor('accent');
 }
 
 .category__name {
   margin-top: 10px;
   font-family: $fontPrimary;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 12px;
   line-height: 125%;
   text-transform: uppercase;
 
   color: getColor('warning');
+  @include respondTo(desktop) {
+    font-size: 24px;
+  }
 }
 // ========================================================
 
@@ -38,18 +47,19 @@
   justify-content: space-around;
 }
 
-.cart {
+.category__cart {
   position: relative;
   display: flex;
   flex-direction: column;
   max-width: 480px;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: getColor('warning');
 }
 
-.cart:hover,
-:focus {
+.category__cart:hover {
   background-color: getColor('accent');
   transform: translate(0, -15px);
+  color: getColor('primary');
 }
 
 .cart__item {
@@ -70,8 +80,6 @@
   line-height: 125%;
 
   text-transform: uppercase;
-
-  color: getColor('warning');
 
   @include respondTo(tablet) {
     font-size: 24px;
@@ -102,4 +110,30 @@
 
 .old-price {
   color: #bcbdbb;
+}
+
+.category__button {
+  width: 190px;
+  height: 51px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  &:hover,
+  :focus {
+    opacity: 0.5;
+  }
+}
+// =========================================================
+
+.category__icon {
+  width: 50px;
+  height: 50px;
+  @include respondTo(tablet) {
+    width: 75px;
+    height: 75px;
+  }
+  @include respondTo(desktop) {
+    height: 100px;
+    width: 100px;
+  }
 }
