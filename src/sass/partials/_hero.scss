@@ -39,23 +39,93 @@
   }
 }
 
-.novetly__title {
-  font-family: $fontPrimary;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 100%;
-  color: getColor('warning');
-
-  margin-bottom: 20px;
-
+.wave-text {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
   @include respondTo(tablet) {
-    font-size: 50px;
-    margin-bottom: 30px;
+    top: 8%;
   }
 
   @include respondTo(desktop) {
-    font-size: 64px;
-    margin-bottom: 50px;
+    top: 10%;
+  }
+}
+
+.wave-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wave-text h2 {
+  font-size: 40px;
+  -webkit-text-stroke: 2px getColor('accent');
+  color: transparent;
+  font-family: $fontPrimary;
+  @include respondTo(tablet) {
+    font-size: 50px;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 60px;
+  }
+}
+
+.wave-text span {
+  font-size: 40px;
+  font-weight: bold;
+  color: getColor('accent');
+  animation: wave 3s ease-in-out infinite;
+  @include respondTo(tablet) {
+    font-size: 50px;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 60px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    clip-path: polygon(
+      0% 45%,
+      15% 44%,
+      32% 50%,
+      53% 61%,
+      70% 58%,
+      64% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      16% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      15% 44%,
+      32% 50%,
+      53% 61%,
+      70% 58%,
+      64% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
   }
 }
 
@@ -168,6 +238,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: all 300ms ease;
   &:hover,
   :focus {
     opacity: 0.5;
@@ -179,6 +250,7 @@
     cursor: pointer;
     transform: rotate(180deg);
     margin-top: -8px;
+    transition: all 300ms ease;
     &:hover,
     :focus {
       opacity: 0.5;
